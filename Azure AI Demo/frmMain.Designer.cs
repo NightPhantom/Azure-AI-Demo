@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            textBoxTextToDetect = new TextBox();
             groupBoxDetectLanguage = new GroupBox();
             labelDetectedLanguage = new Label();
             buttonDetectLanguage = new Button();
             groupBoxDetectLanguage.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // textBoxTextToDetect
             // 
-            textBox1.Location = new Point(6, 22);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(202, 72);
-            textBox1.TabIndex = 0;
+            textBoxTextToDetect.Location = new Point(6, 22);
+            textBoxTextToDetect.Multiline = true;
+            textBoxTextToDetect.Name = "textBoxTextToDetect";
+            textBoxTextToDetect.Size = new Size(202, 72);
+            textBoxTextToDetect.TabIndex = 0;
             // 
             // groupBoxDetectLanguage
             // 
             groupBoxDetectLanguage.Controls.Add(labelDetectedLanguage);
             groupBoxDetectLanguage.Controls.Add(buttonDetectLanguage);
-            groupBoxDetectLanguage.Controls.Add(textBox1);
+            groupBoxDetectLanguage.Controls.Add(textBoxTextToDetect);
             groupBoxDetectLanguage.Location = new Point(12, 12);
             groupBoxDetectLanguage.Name = "groupBoxDetectLanguage";
-            groupBoxDetectLanguage.Size = new Size(296, 101);
+            groupBoxDetectLanguage.Size = new Size(323, 101);
             groupBoxDetectLanguage.TabIndex = 1;
             groupBoxDetectLanguage.TabStop = false;
             groupBoxDetectLanguage.Text = "Detect Language";
@@ -59,9 +59,11 @@
             // 
             labelDetectedLanguage.AutoSize = true;
             labelDetectedLanguage.Location = new Point(214, 48);
+            labelDetectedLanguage.MaximumSize = new Size(105, 0);
             labelDetectedLanguage.Name = "labelDetectedLanguage";
-            labelDetectedLanguage.Size = new Size(0, 15);
+            labelDetectedLanguage.Size = new Size(22, 15);
             labelDetectedLanguage.TabIndex = 2;
+            labelDetectedLanguage.Text = "     ";
             // 
             // buttonDetectLanguage
             // 
@@ -71,6 +73,7 @@
             buttonDetectLanguage.TabIndex = 1;
             buttonDetectLanguage.Text = "Detect";
             buttonDetectLanguage.UseVisualStyleBackColor = true;
+            buttonDetectLanguage.Click += buttonDetectLanguage_Click;
             // 
             // frmMain
             // 
@@ -87,7 +90,7 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox textBoxTextToDetect;
         private GroupBox groupBoxDetectLanguage;
         private Label labelDetectedLanguage;
         private Button buttonDetectLanguage;
