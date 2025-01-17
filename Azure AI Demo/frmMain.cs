@@ -1,7 +1,9 @@
 
 using Azure;
+using Azure.AI.ContentSafety;
 using Azure.AI.TextAnalytics;
 using Microsoft.Extensions.Configuration;
+using System.Text.Json;
 using System.Windows.Forms;
 
 namespace Azure_AI_Demo
@@ -9,6 +11,8 @@ namespace Azure_AI_Demo
     public partial class frmMain : Form
     {
         private TextAnalyticsClient? _languageClient;
+        private ContentSafetyClient? _contentSafetyClient;
+        private PromptShieldClient? _promptShieldClient;
 
         public frmMain()
         {
@@ -26,6 +30,31 @@ namespace Azure_AI_Demo
                 var languageUri = new Uri(languageEndpoint);
                 var languageCredentials = new AzureKeyCredential(languageKey);
                 _languageClient = new TextAnalyticsClient(languageUri, languageCredentials);
+            }
+            else
+            {
+                buttonDetectLanguage.Enabled = false;
+            }
+
+            // Azure AI Content Safety
+            var contentSafetyEndpoint = Program.Configuration["AIContentSafetyEndpoint"];
+            var contentSafetyKey = Program.Configuration["AIContentSafetyKey"];
+            if (!string.IsNullOrEmpty(contentSafetyEndpoint) && !string.IsNullOrEmpty(contentSafetyKey))
+            {
+                var contentSafetyUri = new Uri(languageEndpoint);
+                var contentSafetyCredentials = new AzureKeyCredential(languageKey);
+                _contentSafetyClient = new ContentSafetyClient(contentSafetyUri, contentSafetyCredentials);
+            }
+
+            // Azure AI Prompt Shield (uses same endpoint and key as Content Safety)
+            if (!string.IsNullOrEmpty(contentSafetyEndpoint) && !string.IsNullOrEmpty(contentSafetyKey))
+            {
+                var promptShieldUri = new Uri(contentSafetyEndpoint);
+                _promptShieldClient = new PromptShieldClient(promptShieldUri, contentSafetyKey);
+            }
+            else
+            {
+                buttonTestPrompt.Enabled = false;
             }
         }
 
@@ -97,6 +126,34 @@ namespace Azure_AI_Demo
 
             // Display detected language information
             labelDetectedLanguage.Text = $"Name: {detectedLanguage.Name}\nISO: {detectedLanguage.Iso6391Name}\nConfidence: {detectedLanguage.ConfidenceScore}";
+        }
+
+        private async void buttonTestPrompt_Click(object sender, EventArgs e)
+        {
+            if (_promptShieldClient == null)
+            {
+                labelPromptShieldResult.Text = "Error: Prompt shield client not initialized";
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxPromptShield.Text))
+            {
+                labelPromptShieldResult.Text = "Error: Prompt is empty";
+                return;
+            }
+
+            // Show activity indicator
+            var cancellationTokenSource = new CancellationTokenSource();
+            var activityIndicatorTask = Task.Run(() => IndicateActivity(text => UpdateLabelSafely(labelPromptShieldResult, text), "Checking prompt for jailbreak attempt", cancellationTokenSource.Token));
+
+            // Check prompt for jailbreak attempt
+            PromptShieldResponse result = await _promptShieldClient.AnalyzePromptAsync(textBoxPromptShield.Text);
+
+            // Stop activity indicator
+            cancellationTokenSource.Cancel();
+            await activityIndicatorTask;
+
+            // Display prompt analysys result
+            labelPromptShieldResult.Text = $"Jailbreak attempt: {(result.UserPromptAnalysis.AttackDetected ? "Yes" : "No")}";
         }
     }
 }

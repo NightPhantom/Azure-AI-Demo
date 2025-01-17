@@ -32,7 +32,12 @@
             groupBoxDetectLanguage = new GroupBox();
             labelDetectedLanguage = new Label();
             buttonDetectLanguage = new Button();
+            groupBoxPromptShield = new GroupBox();
+            labelPromptShieldResult = new Label();
+            buttonTestPrompt = new Button();
+            textBoxPromptShield = new TextBox();
             groupBoxDetectLanguage.SuspendLayout();
+            groupBoxPromptShield.SuspendLayout();
             SuspendLayout();
             // 
             // textBoxTextToDetect
@@ -75,16 +80,59 @@
             buttonDetectLanguage.UseVisualStyleBackColor = true;
             buttonDetectLanguage.Click += buttonDetectLanguage_Click;
             // 
+            // groupBoxPromptShield
+            // 
+            groupBoxPromptShield.Controls.Add(labelPromptShieldResult);
+            groupBoxPromptShield.Controls.Add(buttonTestPrompt);
+            groupBoxPromptShield.Controls.Add(textBoxPromptShield);
+            groupBoxPromptShield.Location = new Point(12, 112);
+            groupBoxPromptShield.Name = "groupBoxPromptShield";
+            groupBoxPromptShield.Size = new Size(323, 101);
+            groupBoxPromptShield.TabIndex = 2;
+            groupBoxPromptShield.TabStop = false;
+            groupBoxPromptShield.Text = "Prompt Shield";
+            // 
+            // labelPromptShieldResult
+            // 
+            labelPromptShieldResult.AutoSize = true;
+            labelPromptShieldResult.Location = new Point(214, 48);
+            labelPromptShieldResult.MaximumSize = new Size(105, 0);
+            labelPromptShieldResult.Name = "labelPromptShieldResult";
+            labelPromptShieldResult.Size = new Size(22, 15);
+            labelPromptShieldResult.TabIndex = 3;
+            labelPromptShieldResult.Text = "     ";
+            // 
+            // buttonTestPrompt
+            // 
+            buttonTestPrompt.Location = new Point(214, 22);
+            buttonTestPrompt.Name = "buttonTestPrompt";
+            buttonTestPrompt.Size = new Size(75, 23);
+            buttonTestPrompt.TabIndex = 1;
+            buttonTestPrompt.Text = "Test";
+            buttonTestPrompt.UseVisualStyleBackColor = true;
+            buttonTestPrompt.Click += buttonTestPrompt_Click;
+            // 
+            // textBoxPromptShield
+            // 
+            textBoxPromptShield.Location = new Point(6, 22);
+            textBoxPromptShield.Multiline = true;
+            textBoxPromptShield.Name = "textBoxPromptShield";
+            textBoxPromptShield.Size = new Size(202, 72);
+            textBoxPromptShield.TabIndex = 0;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(groupBoxPromptShield);
             Controls.Add(groupBoxDetectLanguage);
             Name = "frmMain";
             Text = "Azure AI Demo";
             groupBoxDetectLanguage.ResumeLayout(false);
             groupBoxDetectLanguage.PerformLayout();
+            groupBoxPromptShield.ResumeLayout(false);
+            groupBoxPromptShield.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -94,5 +142,9 @@
         private GroupBox groupBoxDetectLanguage;
         private Label labelDetectedLanguage;
         private Button buttonDetectLanguage;
+        private GroupBox groupBoxPromptShield;
+        private Button buttonTestPrompt;
+        private TextBox textBoxPromptShield;
+        private Label labelPromptShieldResult;
     }
 }
