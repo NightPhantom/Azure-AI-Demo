@@ -15,6 +15,7 @@ namespace Azure_AI_Demo
             InitializeComponent();
             tabPageDetectLanguage.Controls.Add(new DetectLanguageUserControl { Dock = DockStyle.Fill });
             tabPagePromptShield.Controls.Add(new PromptShieldUserControl { Dock = DockStyle.Fill });
+            tabPageImageAnalysis.Controls.Add(new ImageAnalysisUserControl { Dock = DockStyle.Fill });
         }
     }
 }

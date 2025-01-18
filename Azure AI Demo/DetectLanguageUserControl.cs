@@ -15,7 +15,6 @@ namespace Azure_AI_Demo
 
         private void LoadConfiguration()
         {
-            // Azure AI Language service
             var languageEndpoint = Program.Configuration["AILanguageServiceEndpoint"];
             var languageKey = Program.Configuration["AILanguageServiceKey"];
             if (!string.IsNullOrEmpty(languageEndpoint) && !string.IsNullOrEmpty(languageKey))

@@ -16,3 +16,10 @@ dotnet user-secrets set "AIContentSafetyEndpoint" "<your Azure AI Content Safety
 ```powershell
 dotnet user-secrets set "AIContentSafetyKey" "<your Azure AI Content Safety service access key>" --project '<the full path to Azure AI Demo.csproj>'
 ```
+### Azure AI Computer Vision service
+```powershell
+dotnet user-secrets set "AIComputerVisionServiceEndpoint" "<your Azure AI Computer Vision service endpoint URI>" --project '<the full path to Azure AI Demo.csproj>'
+```
+```powershell
+dotnet user-secrets set "AIComputerVisionServiceKey" "<your Azure AI Computer Vision service access key>" --project '<the full path to Azure AI Demo.csproj>'
+```
