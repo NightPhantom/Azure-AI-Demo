@@ -69,5 +69,15 @@ namespace Azure_AI_Demo.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_cristian_rojas_8279935 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-cristian-rojas-8279935", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

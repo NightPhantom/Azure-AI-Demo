@@ -32,6 +32,7 @@
             tabPageDetectLanguage = new TabPage();
             tabPagePromptShield = new TabPage();
             tabPageImageAnalysis = new TabPage();
+            tabPageSmartCrop = new TabPage();
             tabControlFeatures.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,6 +41,7 @@
             tabControlFeatures.Controls.Add(tabPageDetectLanguage);
             tabControlFeatures.Controls.Add(tabPagePromptShield);
             tabControlFeatures.Controls.Add(tabPageImageAnalysis);
+            tabControlFeatures.Controls.Add(tabPageSmartCrop);
             tabControlFeatures.Dock = DockStyle.Fill;
             tabControlFeatures.Location = new Point(0, 0);
             tabControlFeatures.Name = "tabControlFeatures";
@@ -62,7 +64,7 @@
             tabPagePromptShield.Location = new Point(4, 24);
             tabPagePromptShield.Name = "tabPagePromptShield";
             tabPagePromptShield.Padding = new Padding(3);
-            tabPagePromptShield.Size = new Size(792, 422);
+            tabPagePromptShield.Size = new Size(776, 533);
             tabPagePromptShield.TabIndex = 1;
             tabPagePromptShield.Text = "Prompt Shield";
             tabPagePromptShield.UseVisualStyleBackColor = true;
@@ -72,10 +74,20 @@
             tabPageImageAnalysis.Location = new Point(4, 24);
             tabPageImageAnalysis.Name = "tabPageImageAnalysis";
             tabPageImageAnalysis.Padding = new Padding(3);
-            tabPageImageAnalysis.Size = new Size(792, 422);
+            tabPageImageAnalysis.Size = new Size(776, 533);
             tabPageImageAnalysis.TabIndex = 2;
             tabPageImageAnalysis.Text = "Image Analysis";
             tabPageImageAnalysis.UseVisualStyleBackColor = true;
+            // 
+            // tabPageSmartCrop
+            // 
+            tabPageSmartCrop.Location = new Point(4, 24);
+            tabPageSmartCrop.Name = "tabPageSmartCrop";
+            tabPageSmartCrop.Padding = new Padding(3);
+            tabPageSmartCrop.Size = new Size(776, 533);
+            tabPageSmartCrop.TabIndex = 3;
+            tabPageSmartCrop.Text = "Smart Crop";
+            tabPageSmartCrop.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -94,5 +106,6 @@
         private TabPage tabPageDetectLanguage;
         private TabPage tabPagePromptShield;
         private TabPage tabPageImageAnalysis;
+        private TabPage tabPageSmartCrop;
     }
 }
