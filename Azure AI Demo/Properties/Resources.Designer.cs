@@ -63,6 +63,16 @@ namespace Azure_AI_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2148882062 {
+            get {
+                object obj = ResourceManager.GetObject("2148882062", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Palácio_do_Congresso_Nacional__52780142794_ {
             get {
                 object obj = ResourceManager.GetObject("Palácio_do_Congresso_Nacional_(52780142794)", resourceCulture);

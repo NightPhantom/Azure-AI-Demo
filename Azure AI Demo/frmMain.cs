@@ -17,6 +17,7 @@ namespace Azure_AI_Demo
             tabPagePromptShield.Controls.Add(new PromptShieldUserControl { Dock = DockStyle.Fill });
             tabPageImageAnalysis.Controls.Add(new ImageAnalysisUserControl { Dock = DockStyle.Fill });
             tabPageSmartCrop.Controls.Add(new ImageSmartCropUserControl { Dock = DockStyle.Fill });
+            tabPageFaceAnalysis.Controls.Add(new FaceUserControl { Dock = DockStyle.Fill });
         }
     }
 }

@@ -23,3 +23,10 @@ dotnet user-secrets set "AIComputerVisionServiceEndpoint" "<your Azure AI Comput
 ```powershell
 dotnet user-secrets set "AIComputerVisionServiceKey" "<your Azure AI Computer Vision service access key>" --project '<the full path to Azure AI Demo.csproj>'
 ```
+### Azure AI Vision Face service
+```powershell
+dotnet user-secrets set "AIVisionFaceServiceEndpoint" "<your Azure AI Vision Face service endpoint URI>" --project '<the full path to Azure AI Demo.csproj>'
+```
+```powershell
+dotnet user-secrets set "AIVisionFaceServiceKey" "<your Azure AI Vision Face service access key>" --project '<the full path to Azure AI Demo.csproj>'
+```

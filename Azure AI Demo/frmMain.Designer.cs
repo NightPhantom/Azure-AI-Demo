@@ -33,6 +33,7 @@
             tabPagePromptShield = new TabPage();
             tabPageImageAnalysis = new TabPage();
             tabPageSmartCrop = new TabPage();
+            tabPageFaceAnalysis = new TabPage();
             tabControlFeatures.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,6 +43,7 @@
             tabControlFeatures.Controls.Add(tabPagePromptShield);
             tabControlFeatures.Controls.Add(tabPageImageAnalysis);
             tabControlFeatures.Controls.Add(tabPageSmartCrop);
+            tabControlFeatures.Controls.Add(tabPageFaceAnalysis);
             tabControlFeatures.Dock = DockStyle.Fill;
             tabControlFeatures.Location = new Point(0, 0);
             tabControlFeatures.Name = "tabControlFeatures";
@@ -89,6 +91,16 @@
             tabPageSmartCrop.Text = "Smart Crop";
             tabPageSmartCrop.UseVisualStyleBackColor = true;
             // 
+            // tabPageFaceAnalysis
+            // 
+            tabPageFaceAnalysis.Location = new Point(4, 24);
+            tabPageFaceAnalysis.Name = "tabPageFaceAnalysis";
+            tabPageFaceAnalysis.Padding = new Padding(3);
+            tabPageFaceAnalysis.Size = new Size(776, 533);
+            tabPageFaceAnalysis.TabIndex = 4;
+            tabPageFaceAnalysis.Text = "Face Analysis";
+            tabPageFaceAnalysis.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -107,5 +119,6 @@
         private TabPage tabPagePromptShield;
         private TabPage tabPageImageAnalysis;
         private TabPage tabPageSmartCrop;
+        private TabPage tabPageFaceAnalysis;
     }
 }
