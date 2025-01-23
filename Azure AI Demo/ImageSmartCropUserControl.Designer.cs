@@ -85,13 +85,14 @@ namespace Azure_AI_Demo
             // 
             // comboBoxCrops
             // 
+            comboBoxCrops.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             comboBoxCrops.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxCrops.FormattingEnabled = true;
             comboBoxCrops.Location = new Point(500, 121);
             comboBoxCrops.Name = "comboBoxCrops";
             comboBoxCrops.Size = new Size(200, 23);
             comboBoxCrops.TabIndex = 8;
-            comboBoxCrops.SelectedIndexChanged += this.comboBoxCrops_SelectedIndexChanged;
+            comboBoxCrops.SelectedIndexChanged += comboBoxCrops_SelectedIndexChanged;
             // 
             // labelImageAnalysisResult
             // 
