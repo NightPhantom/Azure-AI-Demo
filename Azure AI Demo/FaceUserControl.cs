@@ -133,35 +133,75 @@ namespace Azure_AI_Demo
 
         private static void DrawFaceLandmarks(Graphics g, FaceLandmarks landmarks, Vector2 offset, Vector2 ratio)
         {
-            var pen = new Pen(Color.Blue, 2);
+            // Connect landmarks with lines
+            var linePen = new Pen(Color.Green, 1);
 
-            DrawLandmark(g, landmarks.EyebrowLeftInner, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyebrowLeftOuter, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyebrowRightInner, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyebrowRightOuter, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyeLeftBottom, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyeLeftInner, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyeLeftOuter, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyeLeftTop, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyeRightBottom, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyeRightInner, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyeRightOuter, pen, offset, ratio);
-            DrawLandmark(g, landmarks.EyeRightTop, pen, offset, ratio);
-            DrawLandmark(g, landmarks.MouthLeft, pen, offset, ratio);
-            DrawLandmark(g, landmarks.MouthRight, pen, offset, ratio);
-            DrawLandmark(g, landmarks.NoseLeftAlarOutTip, pen, offset, ratio);
-            DrawLandmark(g, landmarks.NoseLeftAlarTop, pen, offset, ratio);
-            DrawLandmark(g, landmarks.NoseRightAlarOutTip, pen, offset, ratio);
-            DrawLandmark(g, landmarks.NoseRightAlarTop, pen, offset, ratio);
-            DrawLandmark(g, landmarks.NoseRootLeft, pen, offset, ratio);
-            DrawLandmark(g, landmarks.NoseRootRight, pen, offset, ratio);
-            DrawLandmark(g, landmarks.NoseTip, pen, offset, ratio);
-            DrawLandmark(g, landmarks.PupilLeft, pen, offset, ratio);
-            DrawLandmark(g, landmarks.PupilRight, pen, offset, ratio);
-            DrawLandmark(g, landmarks.UnderLipBottom, pen, offset, ratio);
-            DrawLandmark(g, landmarks.UnderLipTop, pen, offset, ratio);
-            DrawLandmark(g, landmarks.UpperLipBottom, pen, offset, ratio);
-            DrawLandmark(g, landmarks.UpperLipTop, pen, offset, ratio);
+            // Eyebrows
+            DrawLine(g, landmarks.EyebrowLeftInner, landmarks.EyebrowLeftOuter, linePen, offset, ratio);
+            DrawLine(g, landmarks.EyebrowRightInner, landmarks.EyebrowRightOuter, linePen, offset, ratio);
+
+            // Left eye
+            DrawLine(g, landmarks.EyeLeftBottom, landmarks.EyeLeftInner, linePen, offset, ratio);
+            DrawLine(g, landmarks.EyeLeftInner, landmarks.EyeLeftTop, linePen, offset, ratio);
+            DrawLine(g, landmarks.EyeLeftTop, landmarks.EyeLeftOuter, linePen, offset, ratio);
+            DrawLine(g, landmarks.EyeLeftOuter, landmarks.EyeLeftBottom, linePen, offset, ratio);
+
+            // Right eye
+            DrawLine(g, landmarks.EyeRightBottom, landmarks.EyeRightInner, linePen, offset, ratio);
+            DrawLine(g, landmarks.EyeRightInner, landmarks.EyeRightTop, linePen, offset, ratio);
+            DrawLine(g, landmarks.EyeRightTop, landmarks.EyeRightOuter, linePen, offset, ratio);
+            DrawLine(g, landmarks.EyeRightOuter, landmarks.EyeRightBottom, linePen, offset, ratio);
+
+            // Upper lip
+            DrawLine(g, landmarks.MouthLeft, landmarks.UpperLipTop, linePen, offset, ratio);
+            DrawLine(g, landmarks.UpperLipTop, landmarks.MouthRight, linePen, offset, ratio);
+            DrawLine(g, landmarks.MouthRight, landmarks.UpperLipBottom, linePen, offset, ratio);
+            DrawLine(g, landmarks.UpperLipBottom, landmarks.MouthLeft, linePen, offset, ratio);
+
+            // Lower lip
+            DrawLine(g, landmarks.MouthLeft, landmarks.UnderLipBottom, linePen, offset, ratio);
+            DrawLine(g, landmarks.UnderLipBottom, landmarks.MouthRight, linePen, offset, ratio);
+            DrawLine(g, landmarks.MouthRight, landmarks.UnderLipTop, linePen, offset, ratio);
+            DrawLine(g, landmarks.UnderLipTop, landmarks.MouthLeft, linePen, offset, ratio);
+
+            // Nose
+            DrawLine(g, landmarks.NoseRootLeft, landmarks.NoseLeftAlarTop, linePen, offset, ratio);
+            DrawLine(g, landmarks.NoseLeftAlarTop, landmarks.NoseLeftAlarOutTip, linePen, offset, ratio);
+            DrawLine(g, landmarks.NoseLeftAlarOutTip, landmarks.NoseTip, linePen, offset, ratio);
+            DrawLine(g, landmarks.NoseTip, landmarks.NoseRightAlarOutTip, linePen, offset, ratio);
+            DrawLine(g, landmarks.NoseRightAlarOutTip, landmarks.NoseRightAlarTop, linePen, offset, ratio);
+            DrawLine(g, landmarks.NoseRightAlarTop, landmarks.NoseRootRight, linePen, offset, ratio);
+
+            // Draw landmarks
+            var landmarkPen = new Pen(Color.Blue, 2);
+
+            DrawLandmark(g, landmarks.EyebrowLeftInner, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyebrowLeftOuter, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyebrowRightInner, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyebrowRightOuter, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyeLeftBottom, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyeLeftInner, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyeLeftOuter, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyeLeftTop, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyeRightBottom, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyeRightInner, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyeRightOuter, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.EyeRightTop, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.MouthLeft, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.MouthRight, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.NoseLeftAlarOutTip, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.NoseLeftAlarTop, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.NoseRightAlarOutTip, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.NoseRightAlarTop, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.NoseRootLeft, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.NoseRootRight, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.NoseTip, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.PupilLeft, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.PupilRight, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.UnderLipBottom, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.UnderLipTop, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.UpperLipBottom, landmarkPen, offset, ratio);
+            DrawLandmark(g, landmarks.UpperLipTop, landmarkPen, offset, ratio);
         }
 
         private static void DrawLandmark(Graphics g, LandmarkCoordinate coordinate, Pen pen, Vector2 offset, Vector2 ratio)
@@ -169,6 +209,15 @@ namespace Azure_AI_Demo
             var x = (coordinate.X * ratio.X + offset.X) - pen.Width / 2;
             var y = (coordinate.Y * ratio.Y + offset.Y) - pen.Width / 2;
             g.DrawEllipse(pen, x, y, pen.Width, pen.Width);
+        }
+
+        private static void DrawLine(Graphics g, LandmarkCoordinate start, LandmarkCoordinate end, Pen pen, Vector2 offset, Vector2 ratio)
+        {
+            var x1 = start.X * ratio.X + offset.X;
+            var y1 = start.Y * ratio.Y + offset.Y;
+            var x2 = end.X * ratio.X + offset.X;
+            var y2 = end.Y * ratio.Y + offset.Y;
+            g.DrawLine(pen, x1, y1, x2, y2);
         }
 
         private static void CalculateImageRatiosAndOffsets(PictureBox pictureBox, out Vector2 offset, out Vector2 ratio)
