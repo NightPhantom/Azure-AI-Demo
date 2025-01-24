@@ -33,15 +33,15 @@ namespace Azure_AI_Demo
             await Task.CompletedTask;
         }
 
-        public static void UpdateLabelSafely(Label label, string text)
+        public static void UpdateTextSafely(Control control, string text)
         {
-            if (label.InvokeRequired)
+            if (control.InvokeRequired)
             {
-                label.Invoke(new Action(() => label.Text = text));
+                control.Invoke(new Action(() => control.Text = text));
             }
             else
             {
-                label.Text = text;
+                control.Text = text;
             }
         }
     }

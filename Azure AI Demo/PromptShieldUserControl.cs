@@ -44,7 +44,7 @@ namespace Azure_AI_Demo
 
             // Show activity indicator
             var cancellationTokenSource = new CancellationTokenSource();
-            var activityIndicatorTask = Task.Run(() => ActivityIndicator.IndicateActivity(text => ActivityIndicator.UpdateLabelSafely(labelPromptShieldResult, text), "Checking prompt for jailbreak attempt", cancellationTokenSource.Token));
+            var activityIndicatorTask = Task.Run(() => ActivityIndicator.IndicateActivity(text => ActivityIndicator.UpdateTextSafely(labelPromptShieldResult, text), "Checking prompt for jailbreak attempt", cancellationTokenSource.Token));
 
             // Check prompt for jailbreak attempt
             PromptShieldResponse result = await _promptShieldClient.AnalyzePromptAsync(textBoxPromptShield.Text);

@@ -15,8 +15,6 @@ namespace Azure_AI_Demo
         private Dictionary<int, FaceRectangle>? _detectedFaces;
         private List<FaceLandmarks>? _detectedLandmarks;
 
-        private static readonly float _confidenceThreshold = 0.5f;
-
         public FaceUserControl()
         {
             InitializeComponent();
@@ -74,7 +72,7 @@ namespace Azure_AI_Demo
 
             // Show activity indicator
             var cancellationTokenSource = new CancellationTokenSource();
-            var activityIndicatorTask = Task.Run(() => ActivityIndicator.IndicateActivity(text => ActivityIndicator.UpdateLabelSafely(labelFaceDetectionResult, text), "Analyzing image", cancellationTokenSource.Token));
+            var activityIndicatorTask = Task.Run(() => ActivityIndicator.IndicateActivity(text => ActivityIndicator.UpdateTextSafely(labelFaceDetectionResult, text), "Analyzing image", cancellationTokenSource.Token));
 
             // Detect faces
             var imageData = GetBinaryDataFromImage(pictureBoxImageToAnalyze.Image);

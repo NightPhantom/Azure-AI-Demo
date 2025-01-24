@@ -17,8 +17,6 @@ namespace Azure_AI_Demo
     {
         private ImageAnalysisClient? _imageClient;
 
-        private Dictionary<float, ImageBoundingBox>? _cropResults;
-
         private string? _errorMessage;
 
         public ImageSmartCropUserControl()
@@ -80,7 +78,7 @@ namespace Azure_AI_Demo
 
             // Show activity indicator
             var cancellationTokenSource = new CancellationTokenSource();
-            var activityIndicatorTask = Task.Run(() => ActivityIndicator.IndicateActivity(text => ActivityIndicator.UpdateLabelSafely(labelImageAnalysisResult, text), "Analyzing image", cancellationTokenSource.Token));
+            var activityIndicatorTask = Task.Run(() => ActivityIndicator.IndicateActivity(text => ActivityIndicator.UpdateTextSafely(labelImageAnalysisResult, text), "Analyzing image", cancellationTokenSource.Token));
 
             // Analyze image
             var imageData = GetBinaryDataFromImage(pictureBoxOriginalImage.Image);
@@ -94,7 +92,7 @@ namespace Azure_AI_Demo
             // Stop Activity Indicator
             cancellationTokenSource.Cancel();
             await activityIndicatorTask;
-            ActivityIndicator.UpdateLabelSafely(labelImageAnalysisResult, string.Empty);
+            ActivityIndicator.UpdateTextSafely(labelImageAnalysisResult, string.Empty);
 
             // Display cropped image
             var cropResults = imageAnalysisResult.Value.SmartCrops.Values.ToDictionary(crop => crop.AspectRatio, crop => crop.BoundingBox);

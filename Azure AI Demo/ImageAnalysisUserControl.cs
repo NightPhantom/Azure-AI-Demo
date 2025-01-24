@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Azure.AI.Vision.ImageAnalysis;
+using System.Numerics;
 
 namespace Azure_AI_Demo
 {
@@ -78,7 +79,7 @@ namespace Azure_AI_Demo
 
             // Show activity indicator
             var cancellationTokenSource = new CancellationTokenSource();
-            var activityIndicatorTask = Task.Run(() => ActivityIndicator.IndicateActivity(text => ActivityIndicator.UpdateLabelSafely(labelImageAnalysisResult, text), "Analyzing image", cancellationTokenSource.Token));
+            var activityIndicatorTask = Task.Run(() => ActivityIndicator.IndicateActivity(text => ActivityIndicator.UpdateTextSafely(labelImageAnalysisResult, text), "Analyzing image", cancellationTokenSource.Token));
 
             // Analyze image
             var imageData = GetBinaryDataFromImage(pictureBoxImageToAnalyze.Image);
@@ -187,7 +188,7 @@ namespace Azure_AI_Demo
 
         private void pictureBoxImageToAnalyze_Paint(object sender, PaintEventArgs e)
         {
-            CalculateImageRatiosAndOffsets(pictureBoxImageToAnalyze, out int offsetX, out int offsetY, out float widthRatio, out float heightRatio);
+            CalculateImageRatiosAndOffsets(pictureBoxImageToAnalyze, out Vector2 offset, out Vector2 ratio);
 
             if (_detectedPeople != null)
             {
@@ -197,10 +198,10 @@ namespace Azure_AI_Demo
                     {
                         // Draw bounding box
                         var boundingBox = person.BoundingBox;
-                        var x = boundingBox.X * widthRatio + offsetX;
-                        var y = boundingBox.Y * heightRatio + offsetY;
-                        var width = boundingBox.Width * widthRatio;
-                        var height = boundingBox.Height * heightRatio;
+                        var x = boundingBox.X * ratio.X + offset.X;
+                        var y = boundingBox.Y * ratio.Y + offset.Y;
+                        var width = boundingBox.Width * ratio.X;
+                        var height = boundingBox.Height * ratio.Y;
                         e.Graphics.DrawRectangle(Pens.Red, x, y, width, height);
 
                         // Draw the confidence score
@@ -220,10 +221,10 @@ namespace Azure_AI_Demo
                     {
                         // Draw bounding box
                         var boundingBox = obj.BoundingBox;
-                        var x = boundingBox.X * widthRatio + offsetX;
-                        var y = boundingBox.Y * heightRatio + offsetY;
-                        var width = boundingBox.Width * widthRatio;
-                        var height = boundingBox.Height * heightRatio;
+                        var x = boundingBox.X * ratio.X + offset.X;
+                        var y = boundingBox.Y * ratio.Y + offset.Y;
+                        var width = boundingBox.Width * ratio.X;
+                        var height = boundingBox.Height * ratio.Y;
                         e.Graphics.DrawRectangle(Pens.Blue, x, y, width, height);
 
                         // Draw the tags and confidence scores
@@ -239,7 +240,7 @@ namespace Azure_AI_Demo
             }
         }
 
-        private static void CalculateImageRatiosAndOffsets(PictureBox pictureBox, out int offsetX, out int offsetY, out float widthRatio, out float heightRatio)
+        private static void CalculateImageRatiosAndOffsets(PictureBox pictureBox, out Vector2 offset, out Vector2 ratio)
         {
             int displayedImageWidth, displayedImageHeight;
 
@@ -252,20 +253,20 @@ namespace Azure_AI_Demo
                 // Gaps at top and bottom or picture box
                 displayedImageWidth = pictureBox.Width;
                 displayedImageHeight = (int)(pictureBox.Width / imageAspectRatio);
-                offsetX = 0;
-                offsetY = (pictureBox.Height - displayedImageHeight) / 2;
+                offset.X = 0;
+                offset.Y = (pictureBox.Height - displayedImageHeight) / 2;
             }
             else
             {
                 // Gaps at left and right of picture box
                 displayedImageWidth = (int)(pictureBox.Height * imageAspectRatio);
                 displayedImageHeight = pictureBox.Height;
-                offsetX = (pictureBox.Width - displayedImageWidth) / 2;
-                offsetY = 0;
+                offset.X = (pictureBox.Width - displayedImageWidth) / 2;
+                offset.Y = 0;
             }
 
-            widthRatio = (float)displayedImageWidth / originalImage.Width;
-            heightRatio = (float)displayedImageHeight / originalImage.Height;
+            ratio.X = (float)displayedImageWidth / originalImage.Width;
+            ratio.Y = (float)displayedImageHeight / originalImage.Height;
         }
     }
 }

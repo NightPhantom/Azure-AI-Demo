@@ -34,6 +34,7 @@
             tabPageImageAnalysis = new TabPage();
             tabPageSmartCrop = new TabPage();
             tabPageFaceAnalysis = new TabPage();
+            tabPageOCR = new TabPage();
             tabControlFeatures.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,6 +45,7 @@
             tabControlFeatures.Controls.Add(tabPageImageAnalysis);
             tabControlFeatures.Controls.Add(tabPageSmartCrop);
             tabControlFeatures.Controls.Add(tabPageFaceAnalysis);
+            tabControlFeatures.Controls.Add(tabPageOCR);
             tabControlFeatures.Dock = DockStyle.Fill;
             tabControlFeatures.Location = new Point(0, 0);
             tabControlFeatures.Name = "tabControlFeatures";
@@ -101,6 +103,16 @@
             tabPageFaceAnalysis.Text = "Face Analysis";
             tabPageFaceAnalysis.UseVisualStyleBackColor = true;
             // 
+            // tabPageOCR
+            // 
+            tabPageOCR.Location = new Point(4, 24);
+            tabPageOCR.Name = "tabPageOCR";
+            tabPageOCR.Padding = new Padding(3);
+            tabPageOCR.Size = new Size(776, 533);
+            tabPageOCR.TabIndex = 5;
+            tabPageOCR.Text = "OCR";
+            tabPageOCR.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -120,5 +132,6 @@
         private TabPage tabPageImageAnalysis;
         private TabPage tabPageSmartCrop;
         private TabPage tabPageFaceAnalysis;
+        private TabPage tabPageOCR;
     }
 }

@@ -44,7 +44,7 @@ namespace Azure_AI_Demo
 
             // Show activity indicator
             var cancellationTokenSource = new CancellationTokenSource();
-            var activityIndicatorTask = Task.Run(() => ActivityIndicator.IndicateActivity(text => ActivityIndicator.UpdateLabelSafely(labelDetectedLanguage, text), "Detecting language", cancellationTokenSource.Token));
+            var activityIndicatorTask = Task.Run(() => ActivityIndicator.IndicateActivity(text => ActivityIndicator.UpdateTextSafely(labelDetectedLanguage, text), "Detecting language", cancellationTokenSource.Token));
 
             // Detect language
             DetectedLanguage detectedLanguage = await _languageClient.DetectLanguageAsync(textBoxTextToDetect.Text);
