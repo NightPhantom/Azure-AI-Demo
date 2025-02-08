@@ -6,6 +6,7 @@ using System.Text;
 using System.IO;
 using System;
 using System.Numerics;
+using Azure_AI_Demo.Utils;
 
 namespace Azure_AI_Demo
 {

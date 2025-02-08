@@ -1,5 +1,6 @@
 ﻿using Azure;
 using Azure.AI.ContentSafety;
+using Azure_AI_Demo.Utils;
 
 namespace Azure_AI_Demo
 {

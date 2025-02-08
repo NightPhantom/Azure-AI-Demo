@@ -1,5 +1,4 @@
-﻿
-namespace Azure_AI_Demo
+﻿namespace Azure_AI_Demo.Utils
 {
     internal static class ActivityIndicator
     {

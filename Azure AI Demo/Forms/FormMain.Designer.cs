@@ -1,6 +1,6 @@
 ﻿namespace Azure_AI_Demo
 {
-    partial class frmMain
+    partial class FormMain
     {
         /// <summary>
         ///  Required designer variable.

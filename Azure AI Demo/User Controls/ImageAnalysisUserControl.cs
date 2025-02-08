@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Azure.AI.Vision.ImageAnalysis;
 using System.Numerics;
+using Azure_AI_Demo.Utils;
 
 namespace Azure_AI_Demo
 {

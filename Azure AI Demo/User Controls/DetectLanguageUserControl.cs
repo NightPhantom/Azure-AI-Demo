@@ -1,5 +1,6 @@
 ﻿using Azure.AI.TextAnalytics;
 using Azure;
+using Azure_AI_Demo.Utils;
 
 namespace Azure_AI_Demo
 {

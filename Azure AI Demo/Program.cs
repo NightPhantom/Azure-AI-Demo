@@ -16,9 +16,9 @@ namespace Azure_AI_Demo
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Configuration = new ConfigurationBuilder()
-                .AddUserSecrets<frmMain>()
+                .AddUserSecrets<FormMain>()
                 .Build();
-            Application.Run(new frmMain());
+            Application.Run(new FormMain());
         }
     }
 }

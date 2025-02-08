@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Azure_AI_Demo
 {
-    public partial class frmMain : Form
+    public partial class FormMain : Form
     {
-        public frmMain()
+        public FormMain()
         {
             InitializeComponent();
             tabPageDetectLanguage.Controls.Add(new DetectLanguageUserControl { Dock = DockStyle.Fill });
