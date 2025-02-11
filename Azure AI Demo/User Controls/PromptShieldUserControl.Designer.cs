@@ -31,6 +31,7 @@
             labelPromptShieldResult = new Label();
             buttonTestPrompt = new Button();
             textBoxPromptShield = new TextBox();
+            buttonSetKey = new Button();
             SuspendLayout();
             // 
             // labelPromptShieldResult
@@ -65,10 +66,22 @@
             textBoxPromptShield.Size = new Size(240, 177);
             textBoxPromptShield.TabIndex = 4;
             // 
+            // buttonSetKey
+            // 
+            buttonSetKey.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonSetKey.Image = Properties.Resources.EditKey;
+            buttonSetKey.Location = new Point(326, 0);
+            buttonSetKey.Name = "buttonSetKey";
+            buttonSetKey.Size = new Size(24, 24);
+            buttonSetKey.TabIndex = 7;
+            buttonSetKey.UseVisualStyleBackColor = true;
+            buttonSetKey.Click += buttonSetKey_Click;
+            // 
             // PromptShieldUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(buttonSetKey);
             Controls.Add(labelPromptShieldResult);
             Controls.Add(buttonTestPrompt);
             Controls.Add(textBoxPromptShield);
@@ -83,5 +96,6 @@
         private Label labelPromptShieldResult;
         private Button buttonTestPrompt;
         private TextBox textBoxPromptShield;
+        private Button buttonSetKey;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Azure.AI.TextAnalytics;
 using Azure;
 using Azure_AI_Demo.Utils;
+using Azure_AI_Demo.Forms;
 
 namespace Azure_AI_Demo
 {
@@ -23,11 +24,21 @@ namespace Azure_AI_Demo
                 var languageUri = new Uri(languageEndpoint);
                 var languageCredentials = new AzureKeyCredential(languageKey);
                 _languageClient = new TextAnalyticsClient(languageUri, languageCredentials);
+                buttonDetectLanguage.Enabled = true;
+                buttonSetKey.BackColor = DefaultBackColor;
             }
             else
             {
                 buttonDetectLanguage.Enabled = false;
+                buttonSetKey.BackColor = Color.LightGreen;
             }
+        }
+
+        private void buttonSetKey_Click(object sender, EventArgs e)
+        {
+            FormKeyInput formKeyInput = new FormKeyInput(FormKeyInput.Service.Language);
+            formKeyInput.ShowDialog();
+            LoadConfiguration();
         }
 
         private async void buttonDetectLanguage_Click(object sender, EventArgs e)

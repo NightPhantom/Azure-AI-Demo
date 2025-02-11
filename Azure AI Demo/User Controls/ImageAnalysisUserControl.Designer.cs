@@ -32,6 +32,7 @@
             buttonLoadImage = new Button();
             buttonAnalyzeImage = new Button();
             labelImageAnalysisResult = new Label();
+            buttonSetKey = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxImageToAnalyze).BeginInit();
             SuspendLayout();
             // 
@@ -80,10 +81,22 @@
             labelImageAnalysisResult.TabIndex = 3;
             labelImageAnalysisResult.Text = "     ";
             // 
+            // buttonSetKey
+            // 
+            buttonSetKey.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonSetKey.Image = Properties.Resources.EditKey;
+            buttonSetKey.Location = new Point(773, 3);
+            buttonSetKey.Name = "buttonSetKey";
+            buttonSetKey.Size = new Size(24, 24);
+            buttonSetKey.TabIndex = 4;
+            buttonSetKey.UseVisualStyleBackColor = true;
+            buttonSetKey.Click += buttonSetKey_Click;
+            // 
             // ImageAnalysisUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(buttonSetKey);
             Controls.Add(labelImageAnalysisResult);
             Controls.Add(buttonAnalyzeImage);
             Controls.Add(buttonLoadImage);
@@ -101,5 +114,6 @@
         private Button buttonLoadImage;
         private Button buttonAnalyzeImage;
         private Label labelImageAnalysisResult;
+        private Button buttonSetKey;
     }
 }

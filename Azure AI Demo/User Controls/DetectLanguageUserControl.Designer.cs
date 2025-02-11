@@ -31,6 +31,7 @@
             labelDetectedLanguage = new Label();
             buttonDetectLanguage = new Button();
             textBoxTextToDetect = new TextBox();
+            buttonSetKey = new Button();
             SuspendLayout();
             // 
             // labelDetectedLanguage
@@ -65,10 +66,22 @@
             textBoxTextToDetect.Size = new Size(240, 177);
             textBoxTextToDetect.TabIndex = 0;
             // 
+            // buttonSetKey
+            // 
+            buttonSetKey.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonSetKey.Image = Properties.Resources.EditKey;
+            buttonSetKey.Location = new Point(326, 1);
+            buttonSetKey.Name = "buttonSetKey";
+            buttonSetKey.Size = new Size(24, 24);
+            buttonSetKey.TabIndex = 3;
+            buttonSetKey.UseVisualStyleBackColor = true;
+            buttonSetKey.Click += buttonSetKey_Click;
+            // 
             // DetectLanguageUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(buttonSetKey);
             Controls.Add(labelDetectedLanguage);
             Controls.Add(buttonDetectLanguage);
             Controls.Add(textBoxTextToDetect);
@@ -82,5 +95,6 @@
         private Label labelDetectedLanguage;
         private Button buttonDetectLanguage;
         private TextBox textBoxTextToDetect;
+        private Button buttonSetKey;
     }
 }

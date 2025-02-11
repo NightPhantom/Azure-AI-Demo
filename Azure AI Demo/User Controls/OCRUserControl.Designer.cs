@@ -32,6 +32,7 @@
             buttonLoadImage = new Button();
             pictureBoxImageToAnalyze = new PictureBox();
             textBoxReadResult = new TextBox();
+            buttonSetKey = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxImageToAnalyze).BeginInit();
             SuspendLayout();
             // 
@@ -79,10 +80,22 @@
             textBoxReadResult.Size = new Size(291, 536);
             textBoxReadResult.TabIndex = 8;
             // 
+            // buttonSetKey
+            // 
+            buttonSetKey.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonSetKey.Image = Properties.Resources.EditKey;
+            buttonSetKey.Location = new Point(773, 3);
+            buttonSetKey.Name = "buttonSetKey";
+            buttonSetKey.Size = new Size(24, 24);
+            buttonSetKey.TabIndex = 9;
+            buttonSetKey.UseVisualStyleBackColor = true;
+            buttonSetKey.Click += buttonSetKey_Click;
+            // 
             // OCRUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(buttonSetKey);
             Controls.Add(textBoxReadResult);
             Controls.Add(buttonReadImage);
             Controls.Add(buttonLoadImage);
@@ -99,5 +112,6 @@
         private Button buttonLoadImage;
         private PictureBox pictureBoxImageToAnalyze;
         private TextBox textBoxReadResult;
+        private Button buttonSetKey;
     }
 }

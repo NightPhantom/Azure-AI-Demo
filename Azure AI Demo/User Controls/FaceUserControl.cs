@@ -1,12 +1,9 @@
-﻿
-using Azure.AI.Vision.ImageAnalysis;
-using Azure;
+﻿using Azure;
 using Azure.AI.Vision.Face;
-using System.Text;
-using System.IO;
-using System;
-using System.Numerics;
+using Azure_AI_Demo.Forms;
 using Azure_AI_Demo.Utils;
+using System.Numerics;
+using System.Text;
 
 namespace Azure_AI_Demo
 {
@@ -31,11 +28,21 @@ namespace Azure_AI_Demo
                 var computerVisionUri = new Uri(visionFaceEndpoint);
                 var computerVisionCredentials = new AzureKeyCredential(visionFaceKey);
                 _faceClient = new FaceClient(computerVisionUri, computerVisionCredentials);
+                buttonAnalyzeImage.Enabled = true;
+                buttonSetKey.BackColor = DefaultBackColor;
             }
             else
             {
                 buttonAnalyzeImage.Enabled = false;
+                buttonSetKey.BackColor = Color.LightGreen;
             }
+        }
+
+        private void buttonSetKey_Click(object sender, EventArgs e)
+        {
+            FormKeyInput formKeyInput = new FormKeyInput(FormKeyInput.Service.Face);
+            formKeyInput.ShowDialog();
+            LoadConfiguration();
         }
 
         private void buttonLoadImage_Click(object sender, EventArgs e)
@@ -119,7 +126,7 @@ namespace Azure_AI_Demo
                     e.Graphics.DrawString($"{faceNumber}", font, brush, x, y);
                 }
             }
-            
+
             if (_detectedLandmarks != null)
             {
                 foreach (var faceLandmarks in _detectedLandmarks)

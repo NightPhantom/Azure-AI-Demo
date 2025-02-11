@@ -1,5 +1,6 @@
 ﻿using Azure;
 using Azure.AI.ContentSafety;
+using Azure_AI_Demo.Forms;
 using Azure_AI_Demo.Utils;
 
 namespace Azure_AI_Demo
@@ -23,11 +24,21 @@ namespace Azure_AI_Demo
             {
                 var promptShieldUri = new Uri(contentSafetyEndpoint);
                 _promptShieldClient = new PromptShieldClient(promptShieldUri, contentSafetyKey);
+                buttonTestPrompt.Enabled = true;
+                buttonSetKey.BackColor = DefaultBackColor;
             }
             else
             {
                 buttonTestPrompt.Enabled = false;
+                buttonSetKey.BackColor = Color.LightGreen;
             }
+        }
+
+        private void buttonSetKey_Click(object sender, EventArgs e)
+        {
+            FormKeyInput formKeyInput = new FormKeyInput(FormKeyInput.Service.ContentSafety);
+            formKeyInput.ShowDialog();
+            LoadConfiguration();
         }
 
         private async void buttonTestPrompt_Click(object sender, EventArgs e)

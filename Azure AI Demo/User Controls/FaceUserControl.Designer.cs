@@ -33,6 +33,7 @@
             buttonLoadImage = new Button();
             pictureBoxImageToAnalyze = new PictureBox();
             panelResult = new Panel();
+            buttonSetKey = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxImageToAnalyze).BeginInit();
             panelResult.SuspendLayout();
             SuspendLayout();
@@ -92,10 +93,22 @@
             panelResult.Size = new Size(191, 536);
             panelResult.TabIndex = 8;
             // 
+            // buttonSetKey
+            // 
+            buttonSetKey.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonSetKey.Image = Properties.Resources.EditKey;
+            buttonSetKey.Location = new Point(773, 3);
+            buttonSetKey.Name = "buttonSetKey";
+            buttonSetKey.Size = new Size(24, 24);
+            buttonSetKey.TabIndex = 9;
+            buttonSetKey.UseVisualStyleBackColor = true;
+            buttonSetKey.Click += buttonSetKey_Click;
+            // 
             // FaceUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(buttonSetKey);
             Controls.Add(panelResult);
             Controls.Add(buttonAnalyzeImage);
             Controls.Add(pictureBoxImageToAnalyze);
@@ -115,5 +128,6 @@
         private Button buttonLoadImage;
         private PictureBox pictureBoxImageToAnalyze;
         private Panel panelResult;
+        private Button buttonSetKey;
     }
 }

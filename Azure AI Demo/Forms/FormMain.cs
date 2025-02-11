@@ -1,11 +1,3 @@
-
-using Azure;
-using Azure.AI.ContentSafety;
-using Azure.AI.TextAnalytics;
-using Microsoft.Extensions.Configuration;
-using System.Text.Json;
-using System.Windows.Forms;
-
 namespace Azure_AI_Demo
 {
     public partial class FormMain : Form

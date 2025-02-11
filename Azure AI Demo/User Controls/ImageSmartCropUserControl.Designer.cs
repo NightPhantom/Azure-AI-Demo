@@ -35,6 +35,7 @@ namespace Azure_AI_Demo
             pictureBoxResultImage = new PictureBox();
             comboBoxCrops = new ComboBox();
             labelImageAnalysisResult = new Label();
+            buttonSetKey = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxOriginalImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxResultImage).BeginInit();
             SuspendLayout();
@@ -105,10 +106,22 @@ namespace Azure_AI_Demo
             labelImageAnalysisResult.TabIndex = 9;
             labelImageAnalysisResult.Text = "     ";
             // 
+            // buttonSetKey
+            // 
+            buttonSetKey.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonSetKey.Image = Properties.Resources.EditKey;
+            buttonSetKey.Location = new Point(773, 3);
+            buttonSetKey.Name = "buttonSetKey";
+            buttonSetKey.Size = new Size(24, 24);
+            buttonSetKey.TabIndex = 10;
+            buttonSetKey.UseVisualStyleBackColor = true;
+            buttonSetKey.Click += buttonSetKey_Click;
+            // 
             // ImageSmartCropUserControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(buttonSetKey);
             Controls.Add(labelImageAnalysisResult);
             Controls.Add(comboBoxCrops);
             Controls.Add(pictureBoxResultImage);
@@ -131,5 +144,6 @@ namespace Azure_AI_Demo
         private PictureBox pictureBoxResultImage;
         private ComboBox comboBoxCrops;
         private Label labelImageAnalysisResult;
+        private Button buttonSetKey;
     }
 }
