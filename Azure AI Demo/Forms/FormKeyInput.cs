@@ -20,6 +20,7 @@ namespace Azure_AI_Demo.Forms
 
         public FormKeyInput(Service service)
         {
+            _service = service;
             InitializeComponent();
             ConfigureUI();
         }
@@ -81,7 +82,19 @@ namespace Azure_AI_Demo.Forms
                     break;
             }
 
-            var secretsJson = JsonSerializer.Serialize(Program.Configuration.AsEnumerable(), options: new JsonSerializerOptions { WriteIndented = true });
+            var secrets = new
+            {
+                AILanguageServiceEndpoint = Program.Configuration["AILanguageServiceEndpoint"],
+                AILanguageServiceKey = Program.Configuration["AILanguageServiceKey"],
+                AIContentSafetyEndpoint = Program.Configuration["AIContentSafetyEndpoint"],
+                AIContentSafetyKey = Program.Configuration["AIContentSafetyKey"],
+                AIComputerVisionServiceEndpoint = Program.Configuration["AIComputerVisionServiceEndpoint"],
+                AIComputerVisionServiceKey = Program.Configuration["AIComputerVisionServiceKey"],
+                AIVisionFaceServiceEndpoint = Program.Configuration["AIVisionFaceServiceEndpoint"],
+                AIVisionFaceServiceKey = Program.Configuration["AIVisionFaceServiceKey"],
+            };
+
+            var secretsJson = JsonSerializer.Serialize(secrets, options: new JsonSerializerOptions { WriteIndented = true });
 
             if (!Directory.Exists(secretsDirectory))
             {
