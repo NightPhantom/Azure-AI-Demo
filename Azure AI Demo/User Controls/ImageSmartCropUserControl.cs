@@ -3,7 +3,7 @@ using Azure.AI.Vision.ImageAnalysis;
 using Azure_AI_Demo.Forms;
 using Azure_AI_Demo.Utils;
 
-namespace Azure_AI_Demo
+namespace Azure_AI_Demo.User_Controls
 {
     public partial class ImageSmartCropUserControl : UserControl
     {

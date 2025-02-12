@@ -6,7 +6,7 @@ using System.Data;
 using System.Numerics;
 using System.Text;
 
-namespace Azure_AI_Demo
+namespace Azure_AI_Demo.User_Controls
 {
     public partial class OCRUserControl : UserControl
     {

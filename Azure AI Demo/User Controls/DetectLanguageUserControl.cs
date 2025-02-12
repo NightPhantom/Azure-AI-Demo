@@ -3,7 +3,7 @@ using Azure;
 using Azure_AI_Demo.Utils;
 using Azure_AI_Demo.Forms;
 
-namespace Azure_AI_Demo
+namespace Azure_AI_Demo.User_Controls
 {
     public partial class DetectLanguageUserControl : UserControl
     {

@@ -5,7 +5,7 @@ using Azure_AI_Demo.Utils;
 using System.Numerics;
 using System.Text;
 
-namespace Azure_AI_Demo
+namespace Azure_AI_Demo.User_Controls
 {
     public partial class FaceUserControl : UserControl
     {

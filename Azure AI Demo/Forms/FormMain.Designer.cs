@@ -36,11 +36,13 @@
             tabPageSmartCrop = new TabPage();
             tabPageFaceAnalysis = new TabPage();
             tabPageOCR = new TabPage();
+            tabPageTextAnalysis = new TabPage();
             tabControlFeatures.SuspendLayout();
             SuspendLayout();
             // 
             // tabControlFeatures
             // 
+            tabControlFeatures.Controls.Add(tabPageTextAnalysis);
             tabControlFeatures.Controls.Add(tabPageDetectLanguage);
             tabControlFeatures.Controls.Add(tabPagePromptShield);
             tabControlFeatures.Controls.Add(tabPageImageAnalysis);
@@ -114,6 +116,16 @@
             tabPageOCR.Text = "OCR";
             tabPageOCR.UseVisualStyleBackColor = true;
             // 
+            // tabPageTextAnalysis
+            // 
+            tabPageTextAnalysis.Location = new Point(4, 24);
+            tabPageTextAnalysis.Name = "tabPageTextAnalysis";
+            tabPageTextAnalysis.Padding = new Padding(3);
+            tabPageTextAnalysis.Size = new Size(776, 533);
+            tabPageTextAnalysis.TabIndex = 6;
+            tabPageTextAnalysis.Text = "Text Analysis";
+            tabPageTextAnalysis.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -135,5 +147,6 @@
         private TabPage tabPageSmartCrop;
         private TabPage tabPageFaceAnalysis;
         private TabPage tabPageOCR;
+        private TabPage tabPageTextAnalysis;
     }
 }

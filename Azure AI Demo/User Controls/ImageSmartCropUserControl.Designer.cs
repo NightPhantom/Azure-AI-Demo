@@ -1,5 +1,5 @@
 ﻿
-namespace Azure_AI_Demo
+namespace Azure_AI_Demo.User_Controls
 {
     partial class ImageSmartCropUserControl
     {

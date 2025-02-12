@@ -3,7 +3,7 @@ using Azure.AI.ContentSafety;
 using Azure_AI_Demo.Forms;
 using Azure_AI_Demo.Utils;
 
-namespace Azure_AI_Demo
+namespace Azure_AI_Demo.User_Controls
 {
     public partial class PromptShieldUserControl : UserControl
     {
