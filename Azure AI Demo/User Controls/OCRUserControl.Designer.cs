@@ -39,29 +39,30 @@
             // buttonReadImage
             // 
             buttonReadImage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonReadImage.Location = new Point(506, 32);
+            buttonReadImage.Image = Properties.Resources.Play;
+            buttonReadImage.Location = new Point(506, 3);
             buttonReadImage.Name = "buttonReadImage";
-            buttonReadImage.Size = new Size(90, 23);
+            buttonReadImage.Size = new Size(24, 24);
             buttonReadImage.TabIndex = 6;
-            buttonReadImage.Text = "Read";
             buttonReadImage.UseVisualStyleBackColor = true;
             buttonReadImage.Click += buttonReadImage_Click;
             // 
             // buttonLoadImage
             // 
             buttonLoadImage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonLoadImage.Location = new Point(506, 3);
+            buttonLoadImage.Image = Properties.Resources.OpenFile;
+            buttonLoadImage.Location = new Point(536, 3);
             buttonLoadImage.Name = "buttonLoadImage";
-            buttonLoadImage.Size = new Size(90, 23);
+            buttonLoadImage.Size = new Size(24, 24);
             buttonLoadImage.TabIndex = 5;
-            buttonLoadImage.Text = "Load Image";
             buttonLoadImage.UseVisualStyleBackColor = true;
             buttonLoadImage.Click += buttonLoadImage_Click;
             // 
             // pictureBoxImageToAnalyze
             // 
             pictureBoxImageToAnalyze.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBoxImageToAnalyze.Image = Properties.Resources.conversao_a_direita_antes_de_semaforo_na_avenida_brasil_florindo_cibin_2048x1154;
+            pictureBoxImageToAnalyze.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxImageToAnalyze.Image = Properties.Resources.ocr_sample;
             pictureBoxImageToAnalyze.Location = new Point(0, 0);
             pictureBoxImageToAnalyze.Name = "pictureBoxImageToAnalyze";
             pictureBoxImageToAnalyze.Size = new Size(500, 600);
@@ -73,11 +74,11 @@
             // textBoxReadResult
             // 
             textBoxReadResult.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            textBoxReadResult.Location = new Point(506, 61);
+            textBoxReadResult.Location = new Point(506, 33);
             textBoxReadResult.Multiline = true;
             textBoxReadResult.Name = "textBoxReadResult";
             textBoxReadResult.ReadOnly = true;
-            textBoxReadResult.Size = new Size(291, 536);
+            textBoxReadResult.Size = new Size(291, 564);
             textBoxReadResult.TabIndex = 8;
             // 
             // buttonSetKey

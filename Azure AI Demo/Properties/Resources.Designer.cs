@@ -63,26 +63,6 @@ namespace Azure_AI_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2148882062 {
-            get {
-                object obj = ResourceManager.GetObject("2148882062", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap conversao_a_direita_antes_de_semaforo_na_avenida_brasil_florindo_cibin_2048x1154 {
-            get {
-                object obj = ResourceManager.GetObject("conversao-a-direita-antes-de-semaforo-na-avenida-brasil-florindo-cibin-2048x1154", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap EditKey {
             get {
                 object obj = ResourceManager.GetObject("EditKey", resourceCulture);
@@ -93,9 +73,9 @@ namespace Azure_AI_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Palácio_do_Congresso_Nacional__52780142794_ {
+        internal static System.Drawing.Bitmap face_sample {
             get {
-                object obj = ResourceManager.GetObject("Palácio_do_Congresso_Nacional_(52780142794)", resourceCulture);
+                object obj = ResourceManager.GetObject("face-sample", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +83,49 @@ namespace Azure_AI_Demo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pexels_cristian_rojas_8279935 {
+        internal static System.Drawing.Bitmap image_analysis_sample {
             get {
-                object obj = ResourceManager.GetObject("pexels-cristian-rojas-8279935", resourceCulture);
+                object obj = ResourceManager.GetObject("image-analysis-sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_crop_sample {
+            get {
+                object obj = ResourceManager.GetObject("image-crop-sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ocr_sample {
+            get {
+                object obj = ResourceManager.GetObject("ocr-sample", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OpenFile {
+            get {
+                object obj = ResourceManager.GetObject("OpenFile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Play {
+            get {
+                object obj = ResourceManager.GetObject("Play", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

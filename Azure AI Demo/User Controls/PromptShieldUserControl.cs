@@ -9,10 +9,13 @@ namespace Azure_AI_Demo
     {
         private PromptShieldClient? _promptShieldClient;
 
+        private ToolTip? _toolTip;
+
         public PromptShieldUserControl()
         {
             InitializeComponent();
             LoadConfiguration();
+            InitializeTooltips();
         }
 
         private void LoadConfiguration()
@@ -32,6 +35,13 @@ namespace Azure_AI_Demo
                 buttonTestPrompt.Enabled = false;
                 buttonSetKey.BackColor = Color.LightGreen;
             }
+        }
+
+        private void InitializeTooltips()
+        {
+            _toolTip = new ToolTip();
+            _toolTip.SetToolTip(buttonTestPrompt, "Test the prompt for jailbreak attempt");
+            _toolTip.SetToolTip(buttonSetKey, "Set the key for the content safety service");
         }
 
         private void buttonSetKey_Click(object sender, EventArgs e)

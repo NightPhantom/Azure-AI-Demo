@@ -52,29 +52,30 @@
             // buttonAnalyzeImage
             // 
             buttonAnalyzeImage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonAnalyzeImage.Location = new Point(606, 32);
+            buttonAnalyzeImage.Image = Properties.Resources.Play;
+            buttonAnalyzeImage.Location = new Point(606, 3);
             buttonAnalyzeImage.Name = "buttonAnalyzeImage";
-            buttonAnalyzeImage.Size = new Size(90, 23);
+            buttonAnalyzeImage.Size = new Size(24, 24);
             buttonAnalyzeImage.TabIndex = 6;
-            buttonAnalyzeImage.Text = "Analyze";
             buttonAnalyzeImage.UseVisualStyleBackColor = true;
             buttonAnalyzeImage.Click += buttonAnalyzeImage_Click;
             // 
             // buttonLoadImage
             // 
             buttonLoadImage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonLoadImage.Location = new Point(606, 3);
+            buttonLoadImage.Image = Properties.Resources.OpenFile;
+            buttonLoadImage.Location = new Point(636, 3);
             buttonLoadImage.Name = "buttonLoadImage";
-            buttonLoadImage.Size = new Size(90, 23);
+            buttonLoadImage.Size = new Size(24, 24);
             buttonLoadImage.TabIndex = 5;
-            buttonLoadImage.Text = "Load Image";
             buttonLoadImage.UseVisualStyleBackColor = true;
             buttonLoadImage.Click += buttonLoadImage_Click;
             // 
             // pictureBoxImageToAnalyze
             // 
             pictureBoxImageToAnalyze.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBoxImageToAnalyze.Image = Properties.Resources._2148882062;
+            pictureBoxImageToAnalyze.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxImageToAnalyze.Image = Properties.Resources.face_sample;
             pictureBoxImageToAnalyze.Location = new Point(0, 0);
             pictureBoxImageToAnalyze.Name = "pictureBoxImageToAnalyze";
             pictureBoxImageToAnalyze.Size = new Size(600, 600);
@@ -88,9 +89,9 @@
             panelResult.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panelResult.AutoScroll = true;
             panelResult.Controls.Add(labelFaceDetectionResult);
-            panelResult.Location = new Point(606, 61);
+            panelResult.Location = new Point(606, 33);
             panelResult.Name = "panelResult";
-            panelResult.Size = new Size(191, 536);
+            panelResult.Size = new Size(191, 564);
             panelResult.TabIndex = 8;
             // 
             // buttonSetKey

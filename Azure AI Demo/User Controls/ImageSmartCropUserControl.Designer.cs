@@ -43,7 +43,8 @@ namespace Azure_AI_Demo
             // pictureBoxOriginalImage
             // 
             pictureBoxOriginalImage.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBoxOriginalImage.Image = Properties.Resources.pexels_cristian_rojas_8279935;
+            pictureBoxOriginalImage.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxOriginalImage.Image = Properties.Resources.image_crop_sample;
             pictureBoxOriginalImage.Location = new Point(0, 0);
             pictureBoxOriginalImage.Name = "pictureBoxOriginalImage";
             pictureBoxOriginalImage.Size = new Size(400, 600);
@@ -54,28 +55,29 @@ namespace Azure_AI_Demo
             // buttonAnalyzeImage
             // 
             buttonAnalyzeImage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonAnalyzeImage.Location = new Point(406, 32);
+            buttonAnalyzeImage.Image = Properties.Resources.Play;
+            buttonAnalyzeImage.Location = new Point(406, 3);
             buttonAnalyzeImage.Name = "buttonAnalyzeImage";
-            buttonAnalyzeImage.Size = new Size(90, 23);
+            buttonAnalyzeImage.Size = new Size(24, 24);
             buttonAnalyzeImage.TabIndex = 4;
-            buttonAnalyzeImage.Text = "Analyze";
             buttonAnalyzeImage.UseVisualStyleBackColor = true;
             buttonAnalyzeImage.Click += buttonAnalyzeImage_Click;
             // 
             // buttonLoadImage
             // 
             buttonLoadImage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonLoadImage.Location = new Point(406, 3);
+            buttonLoadImage.Image = Properties.Resources.OpenFile;
+            buttonLoadImage.Location = new Point(436, 3);
             buttonLoadImage.Name = "buttonLoadImage";
-            buttonLoadImage.Size = new Size(90, 23);
+            buttonLoadImage.Size = new Size(24, 24);
             buttonLoadImage.TabIndex = 3;
-            buttonLoadImage.Text = "Load Image";
             buttonLoadImage.UseVisualStyleBackColor = true;
             buttonLoadImage.Click += buttonLoadImage_Click;
             // 
             // pictureBoxResultImage
             // 
             pictureBoxResultImage.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBoxResultImage.BorderStyle = BorderStyle.FixedSingle;
             pictureBoxResultImage.Location = new Point(400, 150);
             pictureBoxResultImage.Name = "pictureBoxResultImage";
             pictureBoxResultImage.Size = new Size(400, 300);

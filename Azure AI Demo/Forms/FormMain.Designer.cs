@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             tabControlFeatures = new TabControl();
             tabPageDetectLanguage = new TabPage();
             tabPagePromptShield = new TabPage();
@@ -113,13 +114,14 @@
             tabPageOCR.Text = "OCR";
             tabPageOCR.UseVisualStyleBackColor = true;
             // 
-            // frmMain
+            // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 561);
             Controls.Add(tabControlFeatures);
-            Name = "frmMain";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "FormMain";
             Text = "Azure AI Demo";
             tabControlFeatures.ResumeLayout(false);
             ResumeLayout(false);

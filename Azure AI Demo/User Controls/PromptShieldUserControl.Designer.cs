@@ -48,11 +48,11 @@
             // buttonTestPrompt
             // 
             buttonTestPrompt.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonTestPrompt.Location = new Point(255, 3);
+            buttonTestPrompt.Image = Properties.Resources.Play;
+            buttonTestPrompt.Location = new Point(249, 3);
             buttonTestPrompt.Name = "buttonTestPrompt";
-            buttonTestPrompt.Size = new Size(75, 23);
+            buttonTestPrompt.Size = new Size(24, 24);
             buttonTestPrompt.TabIndex = 5;
-            buttonTestPrompt.Text = "Test";
             buttonTestPrompt.UseVisualStyleBackColor = true;
             buttonTestPrompt.Click += buttonTestPrompt_Click;
             // 
@@ -70,7 +70,7 @@
             // 
             buttonSetKey.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonSetKey.Image = Properties.Resources.EditKey;
-            buttonSetKey.Location = new Point(326, 0);
+            buttonSetKey.Location = new Point(323, 3);
             buttonSetKey.Name = "buttonSetKey";
             buttonSetKey.Size = new Size(24, 24);
             buttonSetKey.TabIndex = 7;

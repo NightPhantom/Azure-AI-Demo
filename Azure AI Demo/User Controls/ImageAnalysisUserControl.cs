@@ -13,12 +13,15 @@ namespace Azure_AI_Demo
         private List<DetectedPerson>? _detectedPeople;
         private List<DetectedObject>? _detectedObjects;
 
+        private ToolTip? _toolTip;
+
         private static readonly float _confidenceThreshold = 0.5f;
 
         public ImageAnalysisUserControl()
         {
             InitializeComponent();
             LoadConfiguration();
+            InitializeTooltips();
         }
 
         private void LoadConfiguration()
@@ -38,6 +41,14 @@ namespace Azure_AI_Demo
                 buttonAnalyzeImage.Enabled = false;
                 buttonSetKey.BackColor = Color.LightGreen;
             }
+        }
+
+        private void InitializeTooltips()
+        {
+            _toolTip = new ToolTip();
+            _toolTip.SetToolTip(buttonLoadImage, "Load an image to analyze");
+            _toolTip.SetToolTip(buttonAnalyzeImage, "Analyze the loaded image");
+            _toolTip.SetToolTip(buttonSetKey, "Set the key for the computer vision service");
         }
 
         private void buttonSetKey_Click(object sender, EventArgs e)

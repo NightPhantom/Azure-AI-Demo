@@ -13,10 +13,13 @@ namespace Azure_AI_Demo
         private Dictionary<int, FaceRectangle>? _detectedFaces;
         private List<FaceLandmarks>? _detectedLandmarks;
 
+        private ToolTip? _toolTip;
+
         public FaceUserControl()
         {
             InitializeComponent();
             LoadConfiguration();
+            InitializeTooltips();
         }
 
         private void LoadConfiguration()
@@ -36,6 +39,14 @@ namespace Azure_AI_Demo
                 buttonAnalyzeImage.Enabled = false;
                 buttonSetKey.BackColor = Color.LightGreen;
             }
+        }
+
+        private void InitializeTooltips()
+        {
+            _toolTip = new ToolTip();
+            _toolTip.SetToolTip(buttonLoadImage, "Load an image to analyze");
+            _toolTip.SetToolTip(buttonAnalyzeImage, "Analyze the loaded image");
+            _toolTip.SetToolTip(buttonSetKey, "Set the key for the face service");
         }
 
         private void buttonSetKey_Click(object sender, EventArgs e)

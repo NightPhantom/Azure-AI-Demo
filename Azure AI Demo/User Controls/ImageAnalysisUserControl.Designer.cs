@@ -39,7 +39,8 @@
             // pictureBoxImageToAnalyze
             // 
             pictureBoxImageToAnalyze.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBoxImageToAnalyze.Image = Properties.Resources.Palácio_do_Congresso_Nacional__52780142794_;
+            pictureBoxImageToAnalyze.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxImageToAnalyze.Image = Properties.Resources.image_analysis_sample;
             pictureBoxImageToAnalyze.Location = new Point(0, 0);
             pictureBoxImageToAnalyze.Name = "pictureBoxImageToAnalyze";
             pictureBoxImageToAnalyze.Size = new Size(500, 600);
@@ -51,22 +52,22 @@
             // buttonLoadImage
             // 
             buttonLoadImage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonLoadImage.Location = new Point(506, 3);
+            buttonLoadImage.Image = Properties.Resources.OpenFile;
+            buttonLoadImage.Location = new Point(536, 3);
             buttonLoadImage.Name = "buttonLoadImage";
-            buttonLoadImage.Size = new Size(90, 23);
+            buttonLoadImage.Size = new Size(24, 24);
             buttonLoadImage.TabIndex = 1;
-            buttonLoadImage.Text = "Load Image";
             buttonLoadImage.UseVisualStyleBackColor = true;
             buttonLoadImage.Click += buttonLoadImage_Click;
             // 
             // buttonAnalyzeImage
             // 
             buttonAnalyzeImage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonAnalyzeImage.Location = new Point(506, 32);
+            buttonAnalyzeImage.Image = Properties.Resources.Play;
+            buttonAnalyzeImage.Location = new Point(506, 3);
             buttonAnalyzeImage.Name = "buttonAnalyzeImage";
-            buttonAnalyzeImage.Size = new Size(90, 23);
+            buttonAnalyzeImage.Size = new Size(24, 24);
             buttonAnalyzeImage.TabIndex = 2;
-            buttonAnalyzeImage.Text = "Analyze";
             buttonAnalyzeImage.UseVisualStyleBackColor = true;
             buttonAnalyzeImage.Click += buttonAnalyzeImage_Click;
             // 
@@ -74,7 +75,7 @@
             // 
             labelImageAnalysisResult.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelImageAnalysisResult.AutoSize = true;
-            labelImageAnalysisResult.Location = new Point(506, 58);
+            labelImageAnalysisResult.Location = new Point(506, 30);
             labelImageAnalysisResult.MaximumSize = new Size(290, 0);
             labelImageAnalysisResult.Name = "labelImageAnalysisResult";
             labelImageAnalysisResult.Size = new Size(22, 15);

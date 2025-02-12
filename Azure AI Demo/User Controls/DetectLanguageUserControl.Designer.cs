@@ -38,7 +38,7 @@
             // 
             labelDetectedLanguage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             labelDetectedLanguage.AutoSize = true;
-            labelDetectedLanguage.Location = new Point(249, 29);
+            labelDetectedLanguage.Location = new Point(249, 30);
             labelDetectedLanguage.MaximumSize = new Size(100, 0);
             labelDetectedLanguage.Name = "labelDetectedLanguage";
             labelDetectedLanguage.Size = new Size(22, 15);
@@ -48,11 +48,11 @@
             // buttonDetectLanguage
             // 
             buttonDetectLanguage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonDetectLanguage.Location = new Point(255, 3);
+            buttonDetectLanguage.Image = Properties.Resources.Play;
+            buttonDetectLanguage.Location = new Point(249, 3);
             buttonDetectLanguage.Name = "buttonDetectLanguage";
-            buttonDetectLanguage.Size = new Size(75, 23);
+            buttonDetectLanguage.Size = new Size(24, 24);
             buttonDetectLanguage.TabIndex = 1;
-            buttonDetectLanguage.Text = "Detect";
             buttonDetectLanguage.UseVisualStyleBackColor = true;
             buttonDetectLanguage.Click += buttonDetectLanguage_Click;
             // 
@@ -70,7 +70,7 @@
             // 
             buttonSetKey.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonSetKey.Image = Properties.Resources.EditKey;
-            buttonSetKey.Location = new Point(326, 1);
+            buttonSetKey.Location = new Point(323, 3);
             buttonSetKey.Name = "buttonSetKey";
             buttonSetKey.Size = new Size(24, 24);
             buttonSetKey.TabIndex = 3;

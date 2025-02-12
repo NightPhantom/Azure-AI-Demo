@@ -9,12 +9,15 @@ namespace Azure_AI_Demo
     {
         private ImageAnalysisClient? _imageClient;
 
+        private ToolTip? _toolTip;
+
         private string? _errorMessage;
 
         public ImageSmartCropUserControl()
         {
             InitializeComponent();
             LoadConfiguration();
+            InitializeTooltips();
         }
 
         private void LoadConfiguration()
@@ -34,6 +37,14 @@ namespace Azure_AI_Demo
                 buttonAnalyzeImage.Enabled = false;
                 buttonSetKey.BackColor = Color.LightGreen;
             }
+        }
+
+        private void InitializeTooltips()
+        {
+            _toolTip = new ToolTip();
+            _toolTip.SetToolTip(buttonLoadImage, "Load an image to analyze");
+            _toolTip.SetToolTip(buttonAnalyzeImage, "Analyze the image");
+            _toolTip.SetToolTip(buttonSetKey, "Set the key for the computer vision service");
         }
 
         private void buttonSetKey_Click(object sender, EventArgs e)

@@ -9,10 +9,13 @@ namespace Azure_AI_Demo
     {
         private TextAnalyticsClient? _languageClient;
 
+        private ToolTip? _toolTip;
+
         public DetectLanguageUserControl()
         {
             InitializeComponent();
             LoadConfiguration();
+            InitializeTooltips();
         }
 
         private void LoadConfiguration()
@@ -32,6 +35,13 @@ namespace Azure_AI_Demo
                 buttonDetectLanguage.Enabled = false;
                 buttonSetKey.BackColor = Color.LightGreen;
             }
+        }
+
+        private void InitializeTooltips()
+        {
+            _toolTip = new ToolTip();
+            _toolTip.SetToolTip(buttonDetectLanguage, "Detect the language of the text");
+            _toolTip.SetToolTip(buttonSetKey, "Set the key for the language service");
         }
 
         private void buttonSetKey_Click(object sender, EventArgs e)
