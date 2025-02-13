@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBoxTextToAnalyze.Text" xml:space="preserve">
+    <value>Sylvia D'Atri Telles (Rio de Janeiro, 27 de agosto de 1934 — Maricá, 17 de dezembro de 1966) foi uma cantora e compositora brasileira. É considerada uma das maiores intérpretes da bossa nova e da MPB.
+
+A maioria de seus discos está fora de catálogo, o que dificulta o seu conhecimento pelas gerações recentes. Porém, ocasionalmente é lançada uma compilação com algumas de suas inúmeras gravações.
+
+Segundo matéria publicada em O Globo e assinada por João Máximo, "Sylvinha foi uma das melhores intérpretes da moderna música brasileira, entendendo-se como tal a que vai de Ponto final - com Dick Farney e Amargura, com Lúcio Alves, até as canções que Tom e Vinicius fizeram depois de Orfeu da Conceição". </value>
+  </data>
 </root>
